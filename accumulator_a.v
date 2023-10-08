@@ -2,7 +2,7 @@ module accumulator_a (
     input clk, reset, load;
     input [7:0] in;
     output [7:0] out;
-)
+);
 
 reg accumulator_a;
 

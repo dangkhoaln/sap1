@@ -2,7 +2,7 @@ module (
     input clk, reset, load;
     input [7:0] in;
     output [7:0] out;
-)
+);
 
 reg [7:0] output_register;
 

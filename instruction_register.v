@@ -2,7 +2,7 @@ module instruction_register (
     input clk, reset, load, enable;
     input [7:0] in;
     output [7:0] out;
-)
+);
 
 reg [7:0] instruction;
 

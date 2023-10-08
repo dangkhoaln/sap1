@@ -2,7 +2,7 @@ module memory(
     input clk,reset,load;
     input[7:0] bus;
     output[7:0] out
-)
+);
 
 initial begin
     $readmemh("program.bin",ram);
@@ -17,3 +17,5 @@ always @(posedge clk) begin
 end
 
 assign out = ram[mar];
+ 
+endmodule;
