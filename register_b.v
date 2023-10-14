@@ -1,16 +1,16 @@
 module register_b (
-    input clk, reset, load;
-    input [7:0] in;
-    output [7:0] out;
+    input clk_i, reset_i, load_i,
+    input [7:0] bus_i,
+    output [7:0] b_o
 );
 
-reg [7:0] register_b;
+reg [7:0] b;
 
-always @(posedge clk) begin
-    if (reset) register_b <= 8'b0;
-    else if (load) register_b <= in;
+always @(posedge clk_i) begin
+    if (reset_i) b <= 8'b0;
+    else if (load_i) b <= bus_i;
 end
 
-assign out = register_b;
+assign b_o = b;
 
 endmodule

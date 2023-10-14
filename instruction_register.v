@@ -1,16 +1,16 @@
 module instruction_register (
-    input clk, reset, load, enable;
-    input [7:0] in;
-    output [7:0] out;
+    input clk_i, reset_i, load_i,
+    input [7:0] bus_i,
+    output [7:0] ir_out 
 );
 
-reg [7:0] instruction;
+reg [7:0] ir;
 
-always @(posedge clk) begin
-    if (reset) instruction <= 8'b0;
-    else if (load) instruction <= in;
+always @(posedge clk_i) begin
+    if (reset_i) ir <= 8'b0;
+    else if (load_i) ir <= bus_i;
 end
 
-assign out = instruction;
+assign ir_out = ir;
 
 endmodule
